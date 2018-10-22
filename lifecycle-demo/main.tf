@@ -13,6 +13,9 @@ resource "aws_security_group" "training" {
         protocol = "tcp"
         cidr_blocks = ["0.0.0.0/0"]
     }
+    lifecycle {
+        create_before_destroy = true
+    }
 }
 resource "aws_instance" "web" {
     ami = "ami-0735ea082a1534cac"
