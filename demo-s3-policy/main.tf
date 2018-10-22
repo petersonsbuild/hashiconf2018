@@ -5,7 +5,7 @@ resource "aws_s3_bucket" "bucket1" {
     bucket = "${var.owner_id}-${uuid()}"
     acl = "private"
 }
-resource "aws_iam_policy" "bucket1"{
+resource "aws_iam_policy" "bucket1" {
     name = "${aws_s3_bucket.bucket1.id}-policy"
     policy = "${data.template_file.iam_policy.rendered}"
 }
