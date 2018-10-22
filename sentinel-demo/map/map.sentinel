@@ -1,6 +1,8 @@
+import "tfplan"
 main = rule {
     instance_type_is_medium and
-    ami_is_present
+    ami_is_present and
+    has_id
 }
 
 instance_type_is_medium = rule {
@@ -8,4 +10,10 @@ instance_type_is_medium = rule {
 }
 ami_is_present = rule {
     ami.id is "ami-e474db9c"
+}
+
+has_id = rule {
+    any tfplan.random_pet.server as _, servers {
+    servers.applied.id is "deciding-pegasus"
+    }
 }
