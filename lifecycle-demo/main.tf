@@ -1,6 +1,6 @@
 provider "aws" {}
 resource "aws_security_group" "training" {
-    name_prefix = "demo"
+    name_prefix = "demo-modified"
     ingress {
         from_port = 0
         to_port = 0
