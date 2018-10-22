@@ -28,3 +28,6 @@ resource "aws_s3_bucket" "logs" {
     bucket = "${var.namespace}-engineering-prod-tfstate-logs"
     acl = "log-delivery-write"
 }
+output "public_ip" {
+value = "8.8.8.8"
+}
