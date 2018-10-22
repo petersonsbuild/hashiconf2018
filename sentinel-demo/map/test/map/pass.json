@@ -1,0 +1,12 @@
+{
+    "global": {
+        "instance_type": "t2.medium",
+        "ami": {
+        "id": "ami-e474db9c"
+    }
+    },
+        "test": {
+        "main": true,
+        "instance_type_is_medium": true
+        }
+    }
