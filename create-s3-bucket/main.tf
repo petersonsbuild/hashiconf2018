@@ -2,6 +2,13 @@
 provider "aws" {
     version = "~> 1.16"
 }
+terraform {
+backend "s3" {
+    bucket = "pl-cld-benpeterson-engineering-prod-tfstate"
+    key = "root.tfstate"
+    encrypt = true
+}
+}
 variable "namespace" {
     default = "pl-cld-benpeterson"
 }
